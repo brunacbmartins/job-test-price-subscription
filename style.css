@@ -1,0 +1,238 @@
+/*
+- Linear Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
+
+- Backgroumd body: hsl(240, 78%, 98%)
+- Opcoes seletor: hsl(234, 14%, 74%)
+- Titulos menores/ li: hsl(233, 13%, 49%)
+- preco: hsl(232, 13%, 33%)
+
+- Mobile: 375px
+- Desktop: 1440px
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.container {
+    background: url('images/bg-top.svg') no-repeat top right, url('images/bg-bottom.svg') no-repeat left bottom;
+    background-color: hsl(240, 78%, 98%);
+    background-size: 45vh;
+    height: 100vh;
+    width: auto;
+}   
+
+/*PARTE DE CIMA*/
+.container__titulo {
+    color: hsl(233, 13%, 49%);
+    display: flex;
+    font-size: 1.35rem;
+    justify-content: center;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.switch__seletor {
+    align-items: center;
+    color: hsl(234, 14%, 74%);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.seletor{
+    appearance: none;
+    background: hsl(236, 72%, 79%);
+    border-radius: 25px;
+    height: 25px;
+    margin: 0 1rem;
+    position: relative;
+    width: 50px;   
+}
+
+.seletor:hover {
+    cursor: pointer;
+}
+
+.seletor:focus {
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} 
+
+.seletor::before {
+    background-color: white;
+    border-radius: 50%;
+    content: "";
+    height: 19px;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.seletor:checked::before {
+    right: 50%;
+}
+
+/* PLANOS */
+
+.planos {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.planos .plano__titulo {
+    font-size: 15px;
+    padding-top: 1.5rem;
+}
+
+.planos .plano .plano__preco {
+    color: hsl(232, 13%, 33%);
+    font-size: 4rem;
+    font-weight: 700;
+    padding-top: 0.5rem;
+}
+
+.planos .plano .plano__preco span {
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.planos .plano {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0  0.5rem hsl(240, 19%, 86%);
+    color: hsl(233, 13%, 49%);
+    height: 370px;
+    text-align: center;
+    width: 300px;
+}
+
+.planos .plano .plano__info {
+    color: hsl(233, 13%, 49%);
+    padding: 1rem;
+}
+
+.planos .plano .plano__info .plano__item {
+    border-bottom:hsl(240, 4%, 80%) solid 1px;
+    border-width: thin;
+    padding: 1rem 1rem;
+}
+
+.plano .plano__item:first-child {
+    border-top: hsl(240, 4%, 80%) solid 1px;
+}
+
+/* BASIC */
+.planos .basic{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    color: hsl(233, 13%, 49%);
+}
+
+
+/* PRO */
+.planos .pro {
+    box-shadow: none;
+    color: white;
+    background:linear-gradient( hsl(236,71%,76%),hsl(237,63%,64%));
+    height: 400px;
+    padding-top: 2rem;
+}
+
+.planos .pro .plano__preco,
+.planos .pro .plano__item {
+    color: white;
+    font-weight: 100;
+}
+
+.planos .plano .btn__pro {
+    background: white;
+    color: hsl(237, 63%, 64%);
+}
+
+.planos .plano .btn__pro:hover {
+    border: white 1px solid;
+    background: none;
+    color: white;
+}
+
+/* MASTER */
+.planos .master {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+button {
+    background:linear-gradient(to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 0 1rem;
+    padding: 0.75rem;
+    text-transform: uppercase;
+    width: 88%;
+}
+
+button:hover{
+    background: none;
+    border: hsl(232, 13%, 33%) 1px solid;
+    color: hsl(236, 72%, 79%);
+    cursor: pointer;
+}
+
+@media (max-width:1440px){
+    .planos {
+        justify-content: center;
+    }
+}
+
+@media (max-width:900px){
+    .container {
+        background: url('images/bg-top.svg') no-repeat right top;
+        background-size: 50%;
+        height: auto;
+    }
+    
+    .container__titulo {
+        padding-top: 60px;
+    }
+
+    .planos .plano {
+        border-radius: 10px;
+        height: 370px;
+        margin: 15px;
+    }
+    .planos .pro{
+        border-radius: 10px;
+        height: 370px;
+        padding-top: 0;
+    }
+
+    .planos .master {
+        margin-bottom: 60px;
+    } 
+}
+
+@media screen and (max-width:375px){
+
+    .container__titulo {
+        padding-top: 60px;
+    }
+
+    .planos .master {
+        margin-bottom: 60px;
+    }
+}
